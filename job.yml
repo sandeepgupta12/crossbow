@@ -1,0 +1,30 @@
+!Job
+target: !Target
+  head: 45b36976a31a4f363c0c471c2da1abd5bee97fd2
+  email: unknown
+  branch: main
+  remote: https://github.com/sandeepgupta12/arrow
+  github_repo: sandeepgupta12/arrow
+  version: 18.0.0.dev451
+  r_version: 17.0.0.100000451
+  no_rc_version: 18.0.0.dev451
+  no_rc_r_version: 17.0.0.100000451
+  no_rc_semver_version: 18.0.0-dev451
+  no_rc_snapshot_version: 18.0.0-SNAPSHOT
+tasks:
+  conda-linux-ppc64le-cpu-py3: !Task
+    name: conda-linux-ppc64le-cpu-py3
+    ci: azure
+    template: conda-recipes/azure.linux.yml
+    artifacts:
+    - libarrow-18.0.0.dev451-(h[a-z0-9]+)_0_cpu.conda
+    - pyarrow-18.0.0.dev451-py38(h[a-z0-9]+)_0_cpu.conda
+    - pyarrow-18.0.0.dev451-py39(h[a-z0-9]+)_0_cpu.conda
+    - pyarrow-18.0.0.dev451-py310(h[a-z0-9]+)_0_cpu.conda
+    - pyarrow-18.0.0.dev451-py311(h[a-z0-9]+)_0_cpu.conda
+    params:
+      config: linux_ppc64le_cuda_compiler_versionNone
+    branch: build-8-azure-conda-linux-ppc64le-cpu-py3
+    commit: b9f7ca509b83f24d53a59a1f8a6e58616b718936
+params: {}
+branch: build-8
