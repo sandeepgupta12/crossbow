@@ -1,0 +1,29 @@
+!Job
+target: !Target
+  head: 6a2e19a852b367c72d7b12da4d104456491ed8b7
+  email: unknown
+  branch: my-branch
+  remote: https://github.com/sandeepgupta12/arrow.git
+  github_repo: sandeepgupta12/arrow
+  version: 18.0.0.dev0
+  r_version: 17.0.0
+  no_rc_version: 18.0.0.dev0
+  no_rc_r_version: 17.0.0
+  no_rc_semver_version: 18.0.0-dev0
+  no_rc_snapshot_version: 18.0.0-SNAPSHOT
+tasks:
+  wheel-manylinux-2014-cp312-arm64: !Task
+    name: wheel-manylinux-2014-cp312-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.12'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_aarch64.manylinux2014_aarch64
+    branch: build-10-github-wheel-manylinux-2014-cp312-arm64
+    commit: e0fa40ec7ef1b1215b4a5840ff66fbe48bdd8dd3
+params: {}
+branch: build-10
