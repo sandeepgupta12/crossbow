@@ -1,0 +1,606 @@
+!Job
+target: !Target
+  head: f6fca8d196f2a3d325d50c3e02ed12f433fc6c8f
+  email: unknown
+  branch: my-branch
+  remote: https://github.com/sandeepgupta12/arrow.git
+  github_repo: sandeepgupta12/arrow
+  version: 18.0.0.dev1
+  r_version: 17.0.0
+  no_rc_version: 18.0.0.dev1
+  no_rc_r_version: 17.0.0
+  no_rc_semver_version: 18.0.0-dev1
+  no_rc_snapshot_version: 18.0.0-SNAPSHOT
+tasks:
+  wheel-manylinux-2-28-cp310-ppc64le: !Task
+    name: wheel-manylinux-2-28-cp310-ppc64le
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp310-cp310-manylinux_2_28_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.10'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_ppc64le
+    branch: build-14-github-wheel-manylinux-2-28-cp310-ppc64le
+    commit: eb8f5d438e11021caa87f6255a27b694eea8072f
+  wheel-windows-cp38-amd64: !Task
+    name: wheel-windows-cp38-amd64
+    ci: github
+    template: python-wheels/github.windows.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp38-cp38-win_amd64.whl
+    params:
+      python_version: '3.8'
+    branch: build-14-github-wheel-windows-cp38-amd64
+    commit: 2450bec01ea8b85c26224831b8d9e8288438f280
+  wheel-manylinux-2-28-cp311-arm64: !Task
+    name: wheel-manylinux-2-28-cp311-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp311-cp311-manylinux_2_28_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.11'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_aarch64
+    branch: build-14-github-wheel-manylinux-2-28-cp311-arm64
+    commit: 351d9139d854627a85161c9305ceee7185c9dada
+  wheel-manylinux-2014-cp38-arm64: !Task
+    name: wheel-manylinux-2014-cp38-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.8'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_aarch64.manylinux2014_aarch64
+    branch: build-14-github-wheel-manylinux-2014-cp38-arm64
+    commit: 85b6fa46c578631b0dc3bc44fef4a68b2bad32f1
+  wheel-manylinux-2-28-cp38-amd64: !Task
+    name: wheel-manylinux-2-28-cp38-amd64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp38-cp38-manylinux_2_28_x86_64.whl
+    params:
+      arch: amd64
+      python_version: '3.8'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_x86_64
+    branch: build-14-github-wheel-manylinux-2-28-cp38-amd64
+    commit: 848ab09e822d28c0f81c92174bd3ce149dab5d01
+  wheel-manylinux-2-28-cp312-ppc64le: !Task
+    name: wheel-manylinux-2-28-cp312-ppc64le
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp312-cp312-manylinux_2_28_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.12'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_ppc64le
+    branch: build-14-github-wheel-manylinux-2-28-cp312-ppc64le
+    commit: dd234a459eae72969982718446bbd02e84abe8fb
+  wheel-manylinux-2-28-cp39-ppc64le: !Task
+    name: wheel-manylinux-2-28-cp39-ppc64le
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp39-cp39-manylinux_2_28_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.9'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_ppc64le
+    branch: build-14-github-wheel-manylinux-2-28-cp39-ppc64le
+    commit: 300517fd6292455c3b7a6566b726c5307d59e08e
+  wheel-manylinux-2014-cp310-amd64: !Task
+    name: wheel-manylinux-2014-cp310-amd64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+    params:
+      arch: amd64
+      python_version: '3.10'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_x86_64.manylinux2014_x86_64
+    branch: build-14-github-wheel-manylinux-2014-cp310-amd64
+    commit: 0220d5c35d7922fcbc80ef99a767090974de92b3
+  wheel-manylinux-2014-cp39-amd64: !Task
+    name: wheel-manylinux-2014-cp39-amd64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+    params:
+      arch: amd64
+      python_version: '3.9'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_x86_64.manylinux2014_x86_64
+    branch: build-14-github-wheel-manylinux-2014-cp39-amd64
+    commit: 485afe8a0722209206e3b22c5cb55901df3b47f4
+  wheel-macos-big-sur-cp312-arm64: !Task
+    name: wheel-macos-big-sur-cp312-arm64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp312-cp312-macosx_11_0_arm64.whl
+    params:
+      arch: arm64
+      arrow_jemalloc: OFF
+      python_version: '3.12'
+      macos_deployment_target: '11.0'
+      runs_on: macos-14
+      vcpkg_arch: arm64
+    branch: build-14-github-wheel-macos-big-sur-cp312-arm64
+    commit: 14980f3558c83bbb0d11248e80008014e12e9902
+  wheel-manylinux-2014-cp38-amd64: !Task
+    name: wheel-manylinux-2014-cp38-amd64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+    params:
+      arch: amd64
+      python_version: '3.8'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_x86_64.manylinux2014_x86_64
+    branch: build-14-github-wheel-manylinux-2014-cp38-amd64
+    commit: 496a799853674be80c9d9d0f706e77a362f41ee6
+  wheel-windows-cp312-amd64: !Task
+    name: wheel-windows-cp312-amd64
+    ci: github
+    template: python-wheels/github.windows.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp312-cp312-win_amd64.whl
+    params:
+      python_version: '3.12'
+    branch: build-14-github-wheel-windows-cp312-amd64
+    commit: c41a184b2cd46c30e3077f3103878e4f300c64a9
+  wheel-macos-big-sur-cp38-arm64: !Task
+    name: wheel-macos-big-sur-cp38-arm64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp38-cp38-macosx_11_0_arm64.whl
+    params:
+      arch: arm64
+      arrow_jemalloc: OFF
+      python_version: '3.8'
+      macos_deployment_target: '11.0'
+      runs_on: macos-14
+      vcpkg_arch: arm64
+    branch: build-14-github-wheel-macos-big-sur-cp38-arm64
+    commit: 683697f42d563505f009dfa679f307935a5f78a1
+  wheel-macos-catalina-cp311-amd64: !Task
+    name: wheel-macos-catalina-cp311-amd64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp311-cp311-macosx_10_15_x86_64.whl
+    params:
+      arch: x86_64
+      arrow_jemalloc: ON
+      python_version: '3.11'
+      macos_deployment_target: '10.15'
+      runs_on: macos-13
+      vcpkg_arch: amd64
+    branch: build-14-github-wheel-macos-catalina-cp311-amd64
+    commit: 1dcdab4a91cedd59dad462b805e5842ed2b8600b
+  wheel-windows-cp311-amd64: !Task
+    name: wheel-windows-cp311-amd64
+    ci: github
+    template: python-wheels/github.windows.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp311-cp311-win_amd64.whl
+    params:
+      python_version: '3.11'
+    branch: build-14-github-wheel-windows-cp311-amd64
+    commit: d01934e77448acdcd7c23d233437a0e9667ab108
+  wheel-macos-catalina-cp312-amd64: !Task
+    name: wheel-macos-catalina-cp312-amd64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp312-cp312-macosx_10_15_x86_64.whl
+    params:
+      arch: x86_64
+      arrow_jemalloc: ON
+      python_version: '3.12'
+      macos_deployment_target: '10.15'
+      runs_on: macos-13
+      vcpkg_arch: amd64
+    branch: build-14-github-wheel-macos-catalina-cp312-amd64
+    commit: d72f809f3bab7765d233095d3ad921e59b68c707
+  wheel-manylinux-2014-cp39-arm64: !Task
+    name: wheel-manylinux-2014-cp39-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.9'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_aarch64.manylinux2014_aarch64
+    branch: build-14-github-wheel-manylinux-2014-cp39-arm64
+    commit: 691e7ff75c48ddaea71d84ba6075605361d3684d
+  wheel-manylinux-2-28-cp311-amd64: !Task
+    name: wheel-manylinux-2-28-cp311-amd64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp311-cp311-manylinux_2_28_x86_64.whl
+    params:
+      arch: amd64
+      python_version: '3.11'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_x86_64
+    branch: build-14-github-wheel-manylinux-2-28-cp311-amd64
+    commit: cb49104043d15e474940d546c207a90a0f6d86ae
+  wheel-macos-big-sur-cp39-arm64: !Task
+    name: wheel-macos-big-sur-cp39-arm64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp39-cp39-macosx_11_0_arm64.whl
+    params:
+      arch: arm64
+      arrow_jemalloc: OFF
+      python_version: '3.9'
+      macos_deployment_target: '11.0'
+      runs_on: macos-14
+      vcpkg_arch: arm64
+    branch: build-14-github-wheel-macos-big-sur-cp39-arm64
+    commit: 4bc3555a9d1a757acb6396d43fbea60d859f787e
+  wheel-manylinux-2014-cp311-amd64: !Task
+    name: wheel-manylinux-2014-cp311-amd64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+    params:
+      arch: amd64
+      python_version: '3.11'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_x86_64.manylinux2014_x86_64
+    branch: build-14-github-wheel-manylinux-2014-cp311-amd64
+    commit: 85451c2c9f61aba95745f27f0e2473b4b025ebcf
+  wheel-manylinux-2-28-cp39-arm64: !Task
+    name: wheel-manylinux-2-28-cp39-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp39-cp39-manylinux_2_28_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.9'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_aarch64
+    branch: build-14-github-wheel-manylinux-2-28-cp39-arm64
+    commit: 15baacd7b8baa87fb30010db46e5aa07d4072318
+  wheel-macos-big-sur-cp310-arm64: !Task
+    name: wheel-macos-big-sur-cp310-arm64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp310-cp310-macosx_11_0_arm64.whl
+    params:
+      arch: arm64
+      arrow_jemalloc: OFF
+      python_version: '3.10'
+      macos_deployment_target: '11.0'
+      runs_on: macos-14
+      vcpkg_arch: arm64
+    branch: build-14-github-wheel-macos-big-sur-cp310-arm64
+    commit: 90af9e2f8ff726f834e63e5dd1e409cc73813a02
+  wheel-manylinux-2014-cp310-arm64: !Task
+    name: wheel-manylinux-2014-cp310-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.10'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_aarch64.manylinux2014_aarch64
+    branch: build-14-github-wheel-manylinux-2014-cp310-arm64
+    commit: 048fd6d9569b5c901a8988c1f497382d2da478ab
+  wheel-manylinux-2-28-cp38-arm64: !Task
+    name: wheel-manylinux-2-28-cp38-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp38-cp38-manylinux_2_28_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.8'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_aarch64
+    branch: build-14-github-wheel-manylinux-2-28-cp38-arm64
+    commit: 2c3271658d986f8db945f40eac0e97159896bdb4
+  wheel-macos-catalina-cp310-amd64: !Task
+    name: wheel-macos-catalina-cp310-amd64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp310-cp310-macosx_10_15_x86_64.whl
+    params:
+      arch: x86_64
+      arrow_jemalloc: ON
+      python_version: '3.10'
+      macos_deployment_target: '10.15'
+      runs_on: macos-13
+      vcpkg_arch: amd64
+    branch: build-14-github-wheel-macos-catalina-cp310-amd64
+    commit: 2721e41d64ee261dc284e2b0307a29d1834699ce
+  wheel-manylinux-2-28-cp311-ppc64le: !Task
+    name: wheel-manylinux-2-28-cp311-ppc64le
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp311-cp311-manylinux_2_28_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.11'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_ppc64le
+    branch: build-14-github-wheel-manylinux-2-28-cp311-ppc64le
+    commit: 160bb591a784d5b0d4ae650b8f0b01724f020959
+  wheel-macos-catalina-cp38-amd64: !Task
+    name: wheel-macos-catalina-cp38-amd64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp38-cp38-macosx_10_15_x86_64.whl
+    params:
+      arch: x86_64
+      arrow_jemalloc: ON
+      python_version: '3.8'
+      macos_deployment_target: '10.15'
+      runs_on: macos-13
+      vcpkg_arch: amd64
+    branch: build-14-github-wheel-macos-catalina-cp38-amd64
+    commit: 1096b18bd14f83e93c2c925f17ee83617dcad39c
+  wheel-manylinux-2014-cp311-ppc64le: !Task
+    name: wheel-manylinux-2014-cp311-ppc64le
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp311-cp311-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.11'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_ppc64le.manylinux2014_ppc64le
+    branch: build-14-github-wheel-manylinux-2014-cp311-ppc64le
+    commit: a6f5db846e28e9faf988ae458c83f8d6247952d8
+  wheel-manylinux-2014-cp310-ppc64le: !Task
+    name: wheel-manylinux-2014-cp310-ppc64le
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.10'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_ppc64le.manylinux2014_ppc64le
+    branch: build-14-github-wheel-manylinux-2014-cp310-ppc64le
+    commit: 7ff65e7130cc6f23436728abbf5f8f9c5a0f4fed
+  wheel-manylinux-2014-cp312-ppc64le: !Task
+    name: wheel-manylinux-2014-cp312-ppc64le
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp312-cp312-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.12'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_ppc64le.manylinux2014_ppc64le
+    branch: build-14-github-wheel-manylinux-2014-cp312-ppc64le
+    commit: b4f238c55ca069bced21eea45860f28ebac42412
+  wheel-manylinux-2-28-cp310-arm64: !Task
+    name: wheel-manylinux-2-28-cp310-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp310-cp310-manylinux_2_28_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.10'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_aarch64
+    branch: build-14-github-wheel-manylinux-2-28-cp310-arm64
+    commit: 83f3eeaffe0f1c0fec78e49ba4ccecb8fd658a01
+  wheel-manylinux-2014-cp39-ppc64le: !Task
+    name: wheel-manylinux-2014-cp39-ppc64le
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp39-cp39-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.9'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_ppc64le.manylinux2014_ppc64le
+    branch: build-14-github-wheel-manylinux-2014-cp39-ppc64le
+    commit: ea6d4889d4f0fb26b5d4ab5946e7b0ef9ce50761
+  wheel-manylinux-2014-cp311-arm64: !Task
+    name: wheel-manylinux-2014-cp311-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.11'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_aarch64.manylinux2014_aarch64
+    branch: build-14-github-wheel-manylinux-2014-cp311-arm64
+    commit: e992d4bc0eb5d8ae06f71a917356644aa090b9c4
+  wheel-manylinux-2014-cp312-arm64: !Task
+    name: wheel-manylinux-2014-cp312-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.12'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_aarch64.manylinux2014_aarch64
+    branch: build-14-github-wheel-manylinux-2014-cp312-arm64
+    commit: 786d04dbc61de38c705c91b293e013aeacf1c65b
+  wheel-manylinux-2014-cp38-ppc64le: !Task
+    name: wheel-manylinux-2014-cp38-ppc64le
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp38-cp38-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.8'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_ppc64le.manylinux2014_ppc64le
+    branch: build-14-github-wheel-manylinux-2014-cp38-ppc64le
+    commit: 7934b2088411cdd0b168aa1f8f6fa6a598ade5fe
+  wheel-manylinux-2-28-cp38-ppc64le: !Task
+    name: wheel-manylinux-2-28-cp38-ppc64le
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp38-cp38-manylinux_2_28_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.8'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_ppc64le
+    branch: build-14-github-wheel-manylinux-2-28-cp38-ppc64le
+    commit: b15538cf92a06293d7003f2688e4cbcf60d38b44
+  wheel-manylinux-2-28-cp310-amd64: !Task
+    name: wheel-manylinux-2-28-cp310-amd64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp310-cp310-manylinux_2_28_x86_64.whl
+    params:
+      arch: amd64
+      python_version: '3.10'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_x86_64
+    branch: build-14-github-wheel-manylinux-2-28-cp310-amd64
+    commit: c331c2b630cf3bb3376b52dfce4f1fc81e2e753a
+  wheel-manylinux-2-28-cp312-amd64: !Task
+    name: wheel-manylinux-2-28-cp312-amd64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp312-cp312-manylinux_2_28_x86_64.whl
+    params:
+      arch: amd64
+      python_version: '3.12'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_x86_64
+    branch: build-14-github-wheel-manylinux-2-28-cp312-amd64
+    commit: 64182af5a71a994f76193705617f1b2c9f3402ea
+  wheel-manylinux-2014-cp312-amd64: !Task
+    name: wheel-manylinux-2014-cp312-amd64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+    params:
+      arch: amd64
+      python_version: '3.12'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_x86_64.manylinux2014_x86_64
+    branch: build-14-github-wheel-manylinux-2014-cp312-amd64
+    commit: 529b86e7211684973f644bb4b35919fef21f3ba1
+  wheel-manylinux-2-28-cp39-amd64: !Task
+    name: wheel-manylinux-2-28-cp39-amd64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp39-cp39-manylinux_2_28_x86_64.whl
+    params:
+      arch: amd64
+      python_version: '3.9'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_x86_64
+    branch: build-14-github-wheel-manylinux-2-28-cp39-amd64
+    commit: b9e96808fcc9dd522efa82f0a7104ced4969fb9e
+  wheel-macos-catalina-cp39-amd64: !Task
+    name: wheel-macos-catalina-cp39-amd64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp39-cp39-macosx_10_15_x86_64.whl
+    params:
+      arch: x86_64
+      arrow_jemalloc: ON
+      python_version: '3.9'
+      macos_deployment_target: '10.15'
+      runs_on: macos-13
+      vcpkg_arch: amd64
+    branch: build-14-github-wheel-macos-catalina-cp39-amd64
+    commit: 13af4c684f8e3aebeb0dfe0212d374a6e558f458
+  wheel-macos-big-sur-cp311-arm64: !Task
+    name: wheel-macos-big-sur-cp311-arm64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp311-cp311-macosx_11_0_arm64.whl
+    params:
+      arch: arm64
+      arrow_jemalloc: OFF
+      python_version: '3.11'
+      macos_deployment_target: '11.0'
+      runs_on: macos-14
+      vcpkg_arch: arm64
+    branch: build-14-github-wheel-macos-big-sur-cp311-arm64
+    commit: 31dd97b23394b2afac2f2514a5215951ab5f2e68
+  wheel-windows-cp310-amd64: !Task
+    name: wheel-windows-cp310-amd64
+    ci: github
+    template: python-wheels/github.windows.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp310-cp310-win_amd64.whl
+    params:
+      python_version: '3.10'
+    branch: build-14-github-wheel-windows-cp310-amd64
+    commit: e0b62242f47fd0b7aec93c527a9fd5484c41d996
+  wheel-manylinux-2-28-cp312-arm64: !Task
+    name: wheel-manylinux-2-28-cp312-arm64
+    ci: github
+    template: python-wheels/github.linux.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp312-cp312-manylinux_2_28_aarch64.whl
+    params:
+      arch: arm64
+      python_version: '3.12'
+      manylinux_version: 2-28
+      wheel_platform_tag: manylinux_2_28_aarch64
+    branch: build-14-github-wheel-manylinux-2-28-cp312-arm64
+    commit: 35d59d69f55f2ba5843c4eaca8487e38c9166792
+  wheel-windows-cp39-amd64: !Task
+    name: wheel-windows-cp39-amd64
+    ci: github
+    template: python-wheels/github.windows.yml
+    artifacts:
+    - pyarrow-18.0.0.dev1-cp39-cp39-win_amd64.whl
+    params:
+      python_version: '3.9'
+    branch: build-14-github-wheel-windows-cp39-amd64
+    commit: 8e535a2cc5bac49f547fd59fbe1786b6f0f31ad0
+params: {}
+branch: build-14
