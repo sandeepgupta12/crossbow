@@ -1,0 +1,103 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+
+# NOTE: must set "Crossbow" as name to have the badge links working in the
+# github comment reports!
+name: Crossbow
+on:
+  push:
+    branches:
+      - "*-github-*"
+
+env:
+  ARCHERY_DEBUG: 1
+  ARCHERY_USE_DOCKER_CLI: 1
+
+
+jobs:
+  build:
+    name: "Build wheel for manylinux 2014"
+    runs-on: ["self-hosted", "Linux", "ppc64le"]
+    
+    container:
+      image: python:3.12-slim  # Specify the Docker image to use
+      #options: --cpus 2  # You can customize container options (optional)
+
+    env:
+      # archery uses these environment variables
+      
+      ARCH: ppc64le
+      ARCHERY_USE_DOCKER_CLI: 0
+      #PYTHON: "3.11"
+
+    steps:
+      - name: Install dependencies
+        run: |
+
+          apt-get update -y
+          apt-get install -y sudo git curl libjpeg-dev zlib1g-dev python3-pip pkg-config libssl-dev
+          pip install -U pip
+
+      - name: Checkout Arrow
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          path: arrow
+          repository: sandeepgupta12/arrow
+          ref: 24b6b0b3502767702a75559a30bd8760e2d8c1ab
+          submodules: recursive
+
+      
+      - name: Install Rust
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
+          . $HOME/.cargo/env
+          export PATH="$HOME/.cargo/bin:$PATH"
+          rustup default stable
+          rustup update
+          rustc --version  # Check Rust version to confirm installation
+          cargo --version
+
+      - name: Set up Python by actions/setup-python
+        if: |
+          !(runner.os == 'Linux' && runner.arch != 'X64')
+        uses: actions/setup-python@v4
+        with:
+          cache: 'pip'
+          python-version: 3.12
+
+      - name: Set up Python by apt
+        if: runner.os == 'Linux' && runner.arch != 'X64'
+        run: |
+          sudo apt update
+          sudo apt-get install -y python3-pip
+          pip install -U pip
+          echo "$HOME/.local/bin" >>"$GITHUB_PATH"
+
+      - name: Install Archery
+        shell: bash
+        run: |
+          . $HOME/.cargo/env  
+          pip install -e arrow/dev/archery[all]
+
+      - name: Build wheel
+        shell: bash
+        run: archery docker run -e SETUPTOOLS_SCM_PRETEND_VERSION=18.0.0.dev30 python-wheel-manylinux-2014
+
+
+      
