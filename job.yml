@@ -1,0 +1,29 @@
+!Job
+target: !Target
+  head: 2e15562bdf4181d7000e101ad619838289bf14bd
+  email: unknown
+  branch: my-branch
+  remote: https://github.com/sandeepgupta12/arrow.git
+  github_repo: sandeepgupta12/arrow
+  version: 18.0.0.dev60
+  r_version: 17.0.0
+  no_rc_version: 18.0.0.dev60
+  no_rc_r_version: 17.0.0
+  no_rc_semver_version: 18.0.0-dev60
+  no_rc_snapshot_version: 18.0.0-SNAPSHOT
+tasks:
+  wheel-manylinux-2014-cp311-ppc64le: !Task
+    name: wheel-manylinux-2014-cp311-ppc64le
+    ci: github
+    template: python-wheels/github.ppc64le.yml
+    artifacts:
+    - pyarrow-18.0.0.dev55-cp39-cp39-linux_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.11'
+      manylinux_version: '2014'
+      wheel_platform_tag: manylinux_2_17_ppc64le.manylinux2014_ppc64le
+    branch: build-74-github-wheel-manylinux-2014-cp311-ppc64le
+    commit: bc84af2b4965c1c19f696085760c745d56617a6a
+params: {}
+branch: build-74
