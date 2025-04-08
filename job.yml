@@ -1,0 +1,28 @@
+!Job
+target: !Target
+  head: 09722047f074a32656d185aa70f0fee953ae8081
+  email: unknown
+  branch: main
+  remote: https://github.com/sandeepgupta12/arrow.git
+  github_repo: sandeepgupta12/arrow
+  version: 18.0.0.dev92
+  r_version: 18.0.0.100000092
+  no_rc_version: 18.0.0.dev92
+  no_rc_r_version: 18.0.0.100000092
+  no_rc_semver_version: 18.0.0-dev92
+  no_rc_snapshot_version: 18.0.0-SNAPSHOT
+tasks:
+  wheel-cp39-ppc64le: !Task
+    name: wheel-cp39-ppc64le
+    ci: github
+    template: python-wheels/github.ppc64le.yml
+    artifacts:
+    - pyarrow-18.0.0.dev92-cp39-cp39-linux_ppc64le.whl
+    params:
+      arch: ppc64le
+      python_version: '3.9'
+      wheel_platform_tag: linux_ppc64le
+    branch: build-222-github-wheel-cp39-ppc64le
+    commit: b16f930a80961bd91886f23ce5c251133672e15a
+params: {}
+branch: build-222
